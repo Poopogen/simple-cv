@@ -48,7 +48,7 @@ fi
 # 9. Invoke pandoc
 echo "Generating .tex, .pdf, and .html files."
 pandoc -sr markdown+yaml_metadata_block+raw_tex \
-  --template=templates/CV.tex \
+  --template=templates/tex.tex \
   --metadata-file=tmp/metadata.yml \
   $sections \
   -o tmp/out.tex
@@ -61,7 +61,7 @@ pandoc -sr markdown+yaml_metadata_block-raw_tex \
 echo .html saved as docs/index.html
 pandoc -sr markdown+yaml_metadata_block+raw_tex \
   --pdf-engine=xelatex \
-  --template=templates/CV.tex \
+  --template=templates/tex.tex \
   --metadata-file=tmp/metadata.yml \
   $sections \
   -o "docs/$pdf_filename.pdf"
